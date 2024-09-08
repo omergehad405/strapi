@@ -4,7 +4,8 @@
   "info": {
     "singularName": "comment",
     "pluralName": "comments",
-    "displayName": "comments"
+    "displayName": "comments",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,6 +17,12 @@
     },
     "commentContent": {
       "type": "text"
+    },
+    "blog": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::blog.blog",
+      "inversedBy": "comments"
     }
   }
 }

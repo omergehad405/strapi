@@ -804,6 +804,11 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     blogDesc: Attribute.String;
     blogImg: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     blogContent: Attribute.Text;
+    comments: Attribute.Relation<
+      'api::blog.blog',
+      'oneToMany',
+      'api::comment.comment'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -820,6 +825,7 @@ export interface ApiCommentComment extends Schema.CollectionType {
     singularName: 'comment';
     pluralName: 'comments';
     displayName: 'comments';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -827,6 +833,11 @@ export interface ApiCommentComment extends Schema.CollectionType {
   attributes: {
     CommenterName: Attribute.String;
     commentContent: Attribute.Text;
+    blog: Attribute.Relation<
+      'api::comment.comment',
+      'manyToOne',
+      'api::blog.blog'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
