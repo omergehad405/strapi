@@ -856,7 +856,6 @@ export interface ApiCommentComment extends Schema.CollectionType {
     singularName: 'comment';
     pluralName: 'comments';
     displayName: 'comments';
-    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -893,12 +892,14 @@ export interface ApiSubscriberSubscriber extends Schema.CollectionType {
     singularName: 'subscriber';
     pluralName: 'subscribers';
     displayName: 'Subscribers';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    userEmail: Attribute.Email;
+    SubscriberEmail: Attribute.Email;
+    Subscribed: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

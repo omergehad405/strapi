@@ -4,15 +4,19 @@
   "info": {
     "singularName": "subscriber",
     "pluralName": "subscribers",
-    "displayName": "Subscribers"
+    "displayName": "Subscribers",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "userEmail": {
+    "SubscriberEmail": {
       "type": "email"
+    },
+    "Subscribed": {
+      "type": "boolean"
     }
   }
 }
