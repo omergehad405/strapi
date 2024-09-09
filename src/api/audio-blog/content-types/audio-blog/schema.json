@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "audio_blogs",
+  "info": {
+    "singularName": "audio-blog",
+    "pluralName": "audio-blogs",
+    "displayName": "AudioBlogs"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "blogTitle": {
+      "type": "string"
+    },
+    "blogAudio": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

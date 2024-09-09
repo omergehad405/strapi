@@ -788,6 +788,37 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAudioBlogAudioBlog extends Schema.CollectionType {
+  collectionName: 'audio_blogs';
+  info: {
+    singularName: 'audio-blog';
+    pluralName: 'audio-blogs';
+    displayName: 'AudioBlogs';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    blogTitle: Attribute.String;
+    blogAudio: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::audio-blog.audio-blog',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::audio-blog.audio-blog',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiBlogBlog extends Schema.CollectionType {
   collectionName: 'blogs';
   info: {
@@ -904,6 +935,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::audio-blog.audio-blog': ApiAudioBlogAudioBlog;
       'api::blog.blog': ApiBlogBlog;
       'api::comment.comment': ApiCommentComment;
       'api::subscriber.subscriber': ApiSubscriberSubscriber;
