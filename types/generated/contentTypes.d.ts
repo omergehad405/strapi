@@ -372,12 +372,13 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiAudioAudio extends Struct.CollectionTypeSchema {
   collectionName: 'audios';
   info: {
+    description: '';
     displayName: 'audios';
     pluralName: 'audios';
     singularName: 'audio';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     audioBLog: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
@@ -404,7 +405,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     singularName: 'blog';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     blogContent: Schema.Attribute.Blocks;
@@ -428,12 +429,13 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
 export interface ApiCommentComment extends Struct.CollectionTypeSchema {
   collectionName: 'comments';
   info: {
+    description: '';
     displayName: 'comments';
     pluralName: 'comments';
     singularName: 'comment';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     commentContent: Schema.Attribute.Text;
