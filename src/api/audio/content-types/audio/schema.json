@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "audios",
+  "info": {
+    "singularName": "audio",
+    "pluralName": "audios",
+    "displayName": "audios"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "blogTitle": {
+      "type": "string"
+    },
+    "audioBLog": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
