@@ -20,6 +20,12 @@
     },
     "commentDate": {
       "type": "date"
+    },
+    "blog": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::blog.blog",
+      "inversedBy": "comment"
     }
   }
 }

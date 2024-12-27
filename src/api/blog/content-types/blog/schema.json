@@ -36,6 +36,12 @@
     },
     "blogContent": {
       "type": "text"
+    },
+    "comment": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::comment.comment",
+      "mappedBy": "blog"
     }
   }
 }

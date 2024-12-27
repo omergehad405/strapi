@@ -412,6 +412,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     blogDesc: Schema.Attribute.String;
     blogImg: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     blogTitle: Schema.Attribute.String;
+    comment: Schema.Attribute.Relation<'oneToOne', 'api::comment.comment'>;
     comments: Schema.Attribute.Relation<'oneToMany', 'api::comment.comment'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -438,6 +439,7 @@ export interface ApiCommentComment extends Struct.CollectionTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
+    blog: Schema.Attribute.Relation<'oneToOne', 'api::blog.blog'>;
     commentContent: Schema.Attribute.Text;
     commentDate: Schema.Attribute.Date;
     createdAt: Schema.Attribute.DateTime;
