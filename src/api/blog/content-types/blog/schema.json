@@ -29,19 +29,8 @@
         "audios"
       ]
     },
-    "comments": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::comment.comment"
-    },
     "blogContent": {
       "type": "text"
-    },
-    "comment": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::comment.comment",
-      "mappedBy": "blog"
     }
   }
 }

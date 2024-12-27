@@ -412,8 +412,6 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     blogDesc: Schema.Attribute.String;
     blogImg: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     blogTitle: Schema.Attribute.String;
-    comment: Schema.Attribute.Relation<'oneToOne', 'api::comment.comment'>;
-    comments: Schema.Attribute.Relation<'oneToMany', 'api::comment.comment'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -424,38 +422,6 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-  };
-}
-
-export interface ApiCommentComment extends Struct.CollectionTypeSchema {
-  collectionName: 'comments';
-  info: {
-    description: '';
-    displayName: 'comments';
-    pluralName: 'comments';
-    singularName: 'comment';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    blog: Schema.Attribute.Relation<'oneToOne', 'api::blog.blog'>;
-    commentContent: Schema.Attribute.Text;
-    commentDate: Schema.Attribute.Date;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::comment.comment'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    userName: Schema.Attribute.String;
   };
 }
 
@@ -970,7 +936,6 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::audio.audio': ApiAudioAudio;
       'api::blog.blog': ApiBlogBlog;
-      'api::comment.comment': ApiCommentComment;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
