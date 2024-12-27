@@ -1,17 +1,10 @@
-require('dotenv').config();
-
 module.exports = ({ env }) => ({
   upload: {
     config: {
-      provider: 'cloudinary',
+      provider: "local",
       providerOptions: {
-        cloud_name: env('dbfty465x'),
-        api_key: env('481788693473777'),
-        api_secret: env('NEvFpvnakHGbGNw9m9o1mSyFXpo'),
-      },
-      actionOptions: {
-        upload: {},
-        delete: {},
+        // Optional: Set a specific size limit if needed
+        sizeLimit: 1000000000, // Example: 1GB max file size
       },
     },
   },
