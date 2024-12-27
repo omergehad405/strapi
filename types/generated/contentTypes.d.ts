@@ -408,8 +408,8 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
-    blogContent: Schema.Attribute.Blocks;
-    blogDesc: Schema.Attribute.Text;
+    blogContent: Schema.Attribute.Text;
+    blogDesc: Schema.Attribute.String;
     blogImg: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     blogTitle: Schema.Attribute.String;
     comments: Schema.Attribute.Relation<'oneToMany', 'api::comment.comment'>;

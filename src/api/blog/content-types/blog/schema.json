@@ -16,10 +16,7 @@
       "type": "string"
     },
     "blogDesc": {
-      "type": "text"
-    },
-    "blogContent": {
-      "type": "blocks"
+      "type": "string"
     },
     "blogImg": {
       "type": "media",
@@ -36,6 +33,9 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::comment.comment"
+    },
+    "blogContent": {
+      "type": "text"
     }
   }
 }
