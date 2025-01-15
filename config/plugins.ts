@@ -1,14 +1,8 @@
-module.exports = ({ env }) => ({
+module.exports = {
   upload: {
-    config: {
-      provider: "local",
-      providerOptions: {
-        sizeLimit: 1000000000, // Optional: Maximum file size in bytes (1GB)
-      },
-      actionOptions: {
-        upload: {},
-        delete: {},
-      },
+    provider: "imgbb",
+    providerOptions: {
+      apiKey: "25a01dff81412897dc1fa879fc12dbc7",
     },
   },
-});
+};
