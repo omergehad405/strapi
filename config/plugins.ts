@@ -1,8 +1,11 @@
-module.exports = {
+export default ({ env }) => ({
   upload: {
-    provider: "imgbb",
-    providerOptions: {
-      apiKey: "25a01dff81412897dc1fa879fc12dbc7",
+    config: {
+      providerOptions: {
+        localServer: {
+          maxage: 300000,
+        },
+      },
     },
   },
-};
+});
